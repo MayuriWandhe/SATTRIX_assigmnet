@@ -1,0 +1,43 @@
+<div class="container my-5 py-5">
+    <div class="row d-flex justify-content-center text-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header text-white fs-4 py-3">
+                Login 
+            </div>
+            <div class="card-body">
+                    <form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="Username"
+                            formControlName="userName">
+                            <mat-icon matSuffix>person</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password"
+                            type="password" autocomplete="off">
+                            <mat-icon matSuffix>password</mat-icon>
+                        </mat-form-field>
+                        <div class="row">
+                            
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <button mat-raised-button type="submit"
+                                 color="primary">
+                                 Login
+                                </button>
+                            </div>
+                            <div class="col-4"></div>
+                            <div class="col-2"></div>
+                            <div class="col-8 pt-2">
+                                Don't have an account? <a routerLink="register">Register here!</a>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

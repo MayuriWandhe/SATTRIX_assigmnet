@@ -1,0 +1,66 @@
+<app-dashboard></app-dashboard>
+<div class="container py-5 my-5">
+    <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2 text-end mb-3">
+            <button mat-raised-button color="primary"
+            routerLink="/dashboard/register-user">Add user</button>
+        </div>
+    </div>
+    <div class="card border-0 shadow" *ngIf="showTable">
+        <div class="card-header text-white fs-4 py-3 text-center">
+            User list
+        </div>
+        <div class="card-body">
+
+            <table mat-table [dataSource]="dataSource">
+
+     
+                <ng-container matColumnDef="city">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{city}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{name}} </td>
+                </ng-container>
+           
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef> email </th>
+                  <td mat-cell *matCellDef="let element"> {{email}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="contact">
+                  <th mat-header-cell *matHeaderCellDef> phone </th>
+                  <td mat-cell *matCellDef="let element"> {{phone}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element" > 
+                        <div *ngIf="name != ''">
+                            <button mat-button color="primary"
+                            routerLink="/dashboard/edit-user">
+                                <mat-icon>edit</mat-icon>
+                            </button> 
+                            <button mat-button color="warn" (click)="delete()" >
+                                <mat-icon>delete</mat-icon>
+                            </button>    
+                        </div>
+                      
+                    </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              
+              
+        </div>
+    </div>
+
+    <div class="card py-4 text-center fs-4"  *ngIf="!showTable">
+        User is not registered!
+    </div>
+</div>

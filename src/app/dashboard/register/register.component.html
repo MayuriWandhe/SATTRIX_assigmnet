@@ -1,0 +1,65 @@
+<app-dashboard></app-dashboard>
+<div class="container my-5 py-2">
+
+    <div class="row d-flex justify-content-center text-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-6">
+        <div class="row my-3 text-end">
+            <div class="col-8"></div>
+            <div class="col-2 text-end">
+                <button mat-raised-button color="primary" routerLink="/dashboard/user-list">
+                    User List
+                </button>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header text-white fs-4 py-3">
+                Register 
+            </div>
+            <div class="card-body">
+
+                <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" 
+                            formControlName="name">
+                            <mat-error>Name is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <mat-error>Email is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" formControlName="phone">
+                            <mat-error>Phone is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="City" 
+                            formControlName="city">
+                            <mat-error>City is required!</mat-error>
+                        </mat-form-field>
+
+                       
+
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <button mat-raised-button type="submit" 
+                                color="primary">Register</button>
+                            </div>
+                            <div class="col-4"></div>
+                            
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

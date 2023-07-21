@@ -1,0 +1,60 @@
+<div class="container my-5 py-5">
+    <div class="row d-flex justify-content-center text-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-6">
+        <div class="card">
+            <div class="card-header text-white fs-4 py-3">
+                Register 
+            </div>
+            <div class="card-body">
+
+                <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="Username" formControlName="userName">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-error>Username is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" type="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                            <mat-error>Email is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password">
+                            <mat-icon matSuffix>password</mat-icon>
+                            <mat-error>Password is required!</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-75">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput placeholder="Confirm Password" 
+                            formControlName="cPassword">
+                            <mat-icon matSuffix>done</mat-icon>
+                            <mat-error>Please confirm the password!</mat-error>
+                        </mat-form-field>
+
+                       
+
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <button mat-raised-button type="submit" color="primary">Register</button>
+                            </div>
+                            <div class="col-4"></div>
+                            <div class="col-2"></div>
+                            <div class="col-8 pt-2">
+                                Have an account? <a routerLink="">Login here!</a>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
